@@ -18,15 +18,16 @@ const assetCreationValidation = (data) => {
   return schema.validate(data, options);
 };
 
-// const fetchAssetValidation = (data) => {
-//   const schema = Joi.object({
-//     id: Joi.string().required().strict(),
-//   });
+const scanJobCreationValidation = (data) => {
+  const schema = Joi.object({
+    assetId: Joi.string().required().strict(),
+    dueDate: Joi.date().required(),
+  });
 
-//   return schema.validate(data, options);
-// };
+  return schema.validate(data, options);
+};
 
 module.exports = {
   assetCreationValidation,
-  // fetchAssetValidation,
+  scanJobCreationValidation,
 };
