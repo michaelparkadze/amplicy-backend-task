@@ -2,6 +2,11 @@ const { mongoose, Schema } = require("../database/central_mongoose");
 
 const scanJobScheme = new Schema(
   {
+    assetId: {
+      type: Schema.Types.ObjectId,
+      ref: "assets",
+      required: true,
+    },
     dueDate: {
       type: String,
       required: true,
@@ -21,5 +26,5 @@ const scanJobScheme = new Schema(
   }
 );
 
-const collectionName = "assets";
-module.exports = Asset = mongoose.model(collectionName, scanJobScheme);
+const collectionName = "scanJobs";
+module.exports = ScanJob = mongoose.model(collectionName, scanJobScheme);
