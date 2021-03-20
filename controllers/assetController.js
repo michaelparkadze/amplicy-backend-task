@@ -21,7 +21,7 @@ exports.create_asset = async (req, res, next) => {
 };
 
 exports.fetch_asset = async (req, res, next) => {
-  const { assetId } = req.body;
+  const { assetId } = req.query;
 
   fetchAsset(assetId)
     .then((result) => {
